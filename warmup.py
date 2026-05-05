@@ -1,6 +1,6 @@
 # Warmup Problems - HackerRank
 # Student: Taha Hamza
-# Course: Algorithms & Data Structures
+# See NOTES.md for explanations.
 
 # Task 1: Solve Me First
 def solveMeFirst(a, b):
@@ -30,7 +30,7 @@ def miniMaxSum(arr):
     total = sum(arr)
     print(total - max(arr), total - min(arr))
 
-# Task 6: Count positive, negative and zero
+# Task 6: Plus Minus
 def plusMinus(arr):
     positive = 0
     negative = 0
@@ -41,29 +41,23 @@ def plusMinus(arr):
             positive = positive + 1
         elif number < 0:
             negative = negative + 1
-        else: zero = zero + 1
-    print(round(positive/n, 6))
-    print(round(negative/n, 6))
-    print(round(zero/n, 6))
+        else:
+            zero = zero + 1
+    print(round(positive / n, 6))
+    print(round(negative / n, 6))
+    print(round(zero / n, 6))
 
-# Task 7: Print a staircase of # symbols
-
+# Task 7: Staircase
 def staircase(n):
-    for i in range(1, n+1):
-        print(' ' * (n-i) + '#' * i)
+    for i in range(1, n + 1):
+        print(' ' * (n - i) + '#' * i)
 
-# Task 8: Find minimum and maximum sum of 4 numbers
-def miniMaxSum(arr):
-    total = sum(arr)
-    print(total - max(arr), total - min(arr))
-
-# Task 9: Count tallest candles
+# Task 8: Birthday Cake Candles
 def birthdayCakeCandles(candles):
     tallest = max(candles)
-    return candles.count(tallest
+    return candles.count(tallest)
 
-# Task 10: Convert 12-hour to 24-hour time
-
+# Task 9: Time Conversion
 def timeConversion(s):
     if s[-2:] == 'AM':
         if s[:2] == '12':
@@ -73,3 +67,16 @@ def timeConversion(s):
         if s[:2] == '12':
             return s[:-2]
         return str(int(s[:2]) + 12) + s[2:-2]
+
+
+if __name__ == '__main__':
+    print(solveMeFirst(2, 3))
+    print(simpleArraySum([1, 2, 3, 4, 10, 11]))
+    print(compareTriplets([5, 6, 7], [3, 6, 10]))
+    print(aVeryBigSum([1000000001, 1000000002, 1000000003]))
+    miniMaxSum([1, 2, 3, 4, 5])
+    plusMinus([-4, 3, -9, 0, 4, 1])
+    staircase(4)
+    print(birthdayCakeCandles([3, 2, 1, 3]))
+    print(timeConversion('07:05:45PM'))
+    print(timeConversion('12:01:00AM'))
